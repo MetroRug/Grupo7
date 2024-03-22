@@ -1,0 +1,1 @@
+Após rodar o projeto basta inserir o login "admin" e a senha "1234"
