@@ -9,9 +9,9 @@ package com.mycompany.comprotech;
  * @author lucas
  */
 public class Usuario {
-    int codigo;
-    String login;
-    String senha;
+    private int codigo;
+    private String login, senha;
+    //private String senha;
     
     //construtor padrão
     Usuario(){}
@@ -20,4 +20,13 @@ public class Usuario {
         this.login = login;
         this.senha = senha;
     }
+    
+    public String getLogin(){
+        return login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
 }

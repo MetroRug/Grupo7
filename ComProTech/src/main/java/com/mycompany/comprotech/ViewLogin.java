@@ -39,6 +39,7 @@ public class ViewLogin extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -182,6 +183,14 @@ public class ViewLogin extends javax.swing.JFrame {
 
     private void BtnCriaContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCriaContaActionPerformed
         // TODO add your handling code here:
+        // Instanciando a tela Cadusuario
+        CadUsuario cadUsuario = new CadUsuario();
+
+        // Exibindo a tela Cadusuario
+        cadUsuario.setVisible(true);
+
+        // Ocultando a tela ViewLogin
+        this.setVisible(false);       
     }//GEN-LAST:event_BtnCriaContaActionPerformed
 
     /**
