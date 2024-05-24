@@ -48,11 +48,26 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="BtnCriaConta" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="167" max="32767" attributes="0"/>
-                  <Component id="BtnCancelar" min="-2" pref="107" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="BtnCriaConta" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="167" max="32767" attributes="0"/>
+                          <Component id="BtnCancelar" min="-2" pref="107" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="LblLogin" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="TxtNovoLogin" min="-2" pref="144" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="CbSexo" min="-2" pref="114" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="CbTipo" min="-2" pref="104" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -91,21 +106,11 @@
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="TxtNovoLogin" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
-                                  <Component id="LblLogin" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="LblLogin4" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CbSexo" min="-2" pref="114" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="LblLogin5" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CbTipo" min="-2" pref="104" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="0" pref="156" max="32767" attributes="0"/>
+                              <Component id="LblLogin4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                              <Component id="LblLogin5" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                           </Group>
                           <Component id="TxtNovaSenha" alignment="0" max="32767" attributes="0"/>
                           <Component id="TxtConfSenha" alignment="1" max="32767" attributes="0"/>
@@ -125,7 +130,15 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="373" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Component id="LblLogin" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="TxtNovoLogin" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="CbSexo" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="CbTipo" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="301" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="BtnCancelar" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                       <Component id="BtnCriaConta" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
@@ -136,17 +149,10 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="LblLogin" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="LblLogin4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="LblLogin5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="CbTipo" max="32767" attributes="0"/>
-                          <Component id="CbSexo" max="32767" attributes="0"/>
-                          <Component id="TxtNovoLogin" min="-2" pref="32" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="LblLogin2" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -211,7 +217,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="8d" red="42" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Login"/>
+            <Property name="text" type="java.lang.String" value="Nome de us&#xfa;ario"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="TxtNovoLogin">

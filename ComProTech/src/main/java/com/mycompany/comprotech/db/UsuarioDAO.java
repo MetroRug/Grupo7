@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.comprotech;
+package com.mycompany.comprotech.db;
+
+import com.mycompany.comprotech.modelo.Usuario;
 
 
 /**
@@ -11,7 +13,7 @@ package com.mycompany.comprotech;
  */
 public class UsuarioDAO {
     //tipo de retorno, nome, lista de parametros, corpo
-    boolean existe(Usuario u) throws Exception {
+    public Usuario existe(Usuario u) throws Exception {
         //1. Especificar o comando SQL (SELECT)
         var sql = "SELECT * FROM USUARIOS WHERE login = ? AND  senha = ?";
         //2. Estabelecer uma conexão com o banco
@@ -24,16 +26,23 @@ public class UsuarioDAO {
         //5. Executar o comando
         var rs = ps.executeQuery();
         //6. Tratar o resultado e devolver true ou false
-        var usuarioExiste = rs.next();        
+        var usuarioExiste = rs.next();
+        if(usuarioExiste){
+            var tipo = rs.getInt("tipo");
+            u.setTipo(tipo);
+        }
+        else{
+            u = null;
+        }
         //7. Fechar a conexão
         rs.close();
         ps.close();
         conexao.close();
 
-        return usuarioExiste;
+          return u;
     }    
     //cláusula catch or declare
-    void cadastrar(CadastroUsuario c)  throws Exception{
+    public void cadastrar(CadastroUsuario c)  throws Exception{
         //1. Especificar o comando SQL (INSERT)
         var sql = "INSERT INTO USUARIOS (login, senha, nome, sexo, cpf, tipo, email, idade) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
         //2. Estabelecer uma conexão com o banco

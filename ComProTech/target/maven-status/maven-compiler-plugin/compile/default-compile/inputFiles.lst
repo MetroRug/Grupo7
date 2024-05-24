@@ -1,7 +1,7 @@
-C:\Users\lucas\OneDrive\Área de Trabalho\Estudos\Estudos_Java\ComProTech\src\main\java\com\mycompany\comprotech\CadUsuario.java
-C:\Users\lucas\OneDrive\Área de Trabalho\Estudos\Estudos_Java\ComProTech\src\main\java\com\mycompany\comprotech\CadastroUsuario.java
-C:\Users\lucas\OneDrive\Área de Trabalho\Estudos\Estudos_Java\ComProTech\src\main\java\com\mycompany\comprotech\ComProTech.java
-C:\Users\lucas\OneDrive\Área de Trabalho\Estudos\Estudos_Java\ComProTech\src\main\java\com\mycompany\comprotech\ViewLogin.java
-C:\Users\lucas\OneDrive\Área de Trabalho\Estudos\Estudos_Java\ComProTech\src\main\java\com\mycompany\comprotech\ConnectionFactory.java
-C:\Users\lucas\OneDrive\Área de Trabalho\Estudos\Estudos_Java\ComProTech\src\main\java\com\mycompany\comprotech\Usuario.java
-C:\Users\lucas\OneDrive\Área de Trabalho\Estudos\Estudos_Java\ComProTech\src\main\java\com\mycompany\comprotech\UsuarioDAO.java
+C:\Users\lucas\OneDrive\Área de Trabalho\Grupo7\ComProTech\src\main\java\com\mycompany\comprotech\ComProTech.java
+C:\Users\lucas\OneDrive\Área de Trabalho\Grupo7\ComProTech\src\main\java\com\mycompany\comprotech\db\UsuarioDAO.java
+C:\Users\lucas\OneDrive\Área de Trabalho\Grupo7\ComProTech\src\main\java\com\mycompany\comprotech\db\ConnectionFactory.java
+C:\Users\lucas\OneDrive\Área de Trabalho\Grupo7\ComProTech\src\main\java\com\mycompany\comprotech\db\CadastroUsuario.java
+C:\Users\lucas\OneDrive\Área de Trabalho\Grupo7\ComProTech\src\main\java\com\mycompany\comprotech\telas\ViewLogin.java
+C:\Users\lucas\OneDrive\Área de Trabalho\Grupo7\ComProTech\src\main\java\com\mycompany\comprotech\telas\CadUsuario.java
+C:\Users\lucas\OneDrive\Área de Trabalho\Grupo7\ComProTech\src\main\java\com\mycompany\comprotech\modelo\Usuario.java

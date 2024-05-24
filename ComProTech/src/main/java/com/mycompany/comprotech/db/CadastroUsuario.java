@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.comprotech;
+package com.mycompany.comprotech.db;
 
 /**
  *
@@ -14,9 +14,9 @@ public class CadastroUsuario {
     //private String senha;
     
     //construtor padrão
-    CadastroUsuario(){}
+    public CadastroUsuario(){}
     
-    CadastroUsuario(String login, String senha, String nome, String sexo, String cpf, String tipo, String email, int idade){
+    public CadastroUsuario(String login, String senha, String nome, String sexo, String cpf, String tipo, String email, int idade){
         this.login = login;
         this.senha = senha;
         this.nome = nome;

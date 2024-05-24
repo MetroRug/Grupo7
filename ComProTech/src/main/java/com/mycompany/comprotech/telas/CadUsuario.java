@@ -2,8 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.comprotech;
+package com.mycompany.comprotech.telas;
 
+import com.mycompany.comprotech.db.*;
+//import com.mycompany.comprotech.db.CadastroUsuario;
+//import com.mycompany.comprotech.db.UsuarioDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -77,7 +80,7 @@ public class CadUsuario extends javax.swing.JFrame {
 
         LblLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         LblLogin.setForeground(new java.awt.Color(66, 141, 255));
-        LblLogin.setText("Login");
+        LblLogin.setText("Nome de usúario");
 
         TxtNovoLogin.setForeground(new java.awt.Color(66, 141, 255));
 
@@ -160,9 +163,20 @@ public class CadUsuario extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BtnCriaConta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
-                .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(BtnCriaConta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                        .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(LblLogin)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(TxtNovoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(CbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -191,18 +205,11 @@ public class CadUsuario extends javax.swing.JFrame {
                                     .addGap(0, 0, Short.MAX_VALUE))
                                 .addComponent(TxtIdade)))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addGap(0, 0, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(TxtNovoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(LblLogin))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(LblLogin4)
-                                .addComponent(CbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(LblLogin5)
-                                .addComponent(CbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(0, 156, Short.MAX_VALUE)
+                            .addComponent(LblLogin4)
+                            .addGap(92, 92, 92)
+                            .addComponent(LblLogin5)
+                            .addGap(80, 80, 80))
                         .addComponent(TxtNovaSenha)
                         .addComponent(TxtConfSenha, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -215,7 +222,14 @@ public class CadUsuario extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(373, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(LblLogin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TxtNovoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 301, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnCriaConta, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -224,15 +238,9 @@ public class CadUsuario extends javax.swing.JFrame {
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(LblLogin)
                         .addComponent(LblLogin4)
                         .addComponent(LblLogin5))
-                    .addGap(18, 18, 18)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(CbTipo)
-                        .addComponent(CbSexo)
-                        .addComponent(TxtNovoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
+                    .addGap(58, 58, 58)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(LblLogin2)
                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -288,7 +296,10 @@ public class CadUsuario extends javax.swing.JFrame {
         var novoLogin = TxtNovoLogin.getText();
         var novaSenha = new String(TxtNovaSenha.getPassword());
         String nome = TxtNomeUsu.getText();
+        String email = TxtEmail.getText();
+        String cpf = TxtCpf.getText();
         Object selectedSexo = CbSexo.getSelectedItem();
+                
         if (selectedSexo != null) {
             if (selectedSexo.equals("MASCULINO")) {
                 sexo = "Ma";
@@ -299,33 +310,45 @@ public class CadUsuario extends javax.swing.JFrame {
         Object selectedTipo = CbTipo.getSelectedItem();
         if (selectedTipo != null) {
             if (selectedTipo.equals("USUARIO")) {
-                tipo = "USUARIO";
+                tipo = "2";
             } else if (selectedTipo.equals("ADMIN")) {
-                tipo = "ADMIN";
+                tipo = "1";
             }
-        }       
-        String cpf = TxtCpf.getText();        
-        String email = TxtEmail.getText();
+        }               
+        
+        // Validação de campos vazios
+        if (novoLogin.trim().isEmpty() || novaSenha.trim().isEmpty() || nome.trim().isEmpty() ||
+        cpf.trim().isEmpty() || email.trim().isEmpty() || TxtIdade.getText().trim().isEmpty() || 
+        new String(TxtConfSenha.getPassword()).trim().isEmpty()) {        
+            JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos!");
+            return;
+        }      
         
         int idade = 0; // Inicializa a idade com 0
         try {
             idade = Integer.parseInt(TxtIdade.getText());
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Idade inválida!");
-        }
-        var confirmaNovaSenha =
-                new String(TxtConfSenha.getPassword());
+            return;
+        }           
         
+        var confirmaNovaSenha = new String(TxtConfSenha.getPassword());        
         var usuario = new CadastroUsuario(novoLogin, novaSenha, nome, sexo, cpf, tipo, email, idade);
         var dao = new UsuarioDAO();
         //string pool
         if (novaSenha.equals(confirmaNovaSenha)){
             try {
                 dao.cadastrar(usuario);
-                JOptionPane.showMessageDialog(null, "Par usuário/senha inválido");
+                JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+                limparCampos();
+                
             } catch (Exception ex) {
                 Logger.getLogger(CadUsuario.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "As senhas não coinciden!");
+            TxtConfSenha.selectAll();
         }
     }//GEN-LAST:event_BtnCriaContaActionPerformed
 
@@ -358,6 +381,17 @@ public class CadUsuario extends javax.swing.JFrame {
         this.setVisible(false);      
     }//GEN-LAST:event_formWindowClosing
 
+private void limparCampos() {
+    TxtNovoLogin.setText("");
+    TxtNovaSenha.setText("");
+    TxtNomeUsu.setText("");
+    CbSexo.setSelectedIndex(-1); 
+    CbTipo.setSelectedIndex(0);
+    TxtCpf.setText("");
+    TxtEmail.setText("");
+    TxtIdade.setText("");
+    TxtConfSenha.setText("");
+}    
     /**
      * @param args the command line arguments
      */

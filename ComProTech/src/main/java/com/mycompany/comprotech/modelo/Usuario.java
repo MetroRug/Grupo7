@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.comprotech;
+package com.mycompany.comprotech.modelo;
 
 /**
  *
@@ -11,12 +11,13 @@ package com.mycompany.comprotech;
 public class Usuario {
     private int codigo;
     private String login, senha;
+    private int tipo;
     //private String senha;
     
     //construtor padrão
-    Usuario(){}
+    public Usuario(){}
     
-    Usuario(String login, String senha){
+    public Usuario(String login, String senha){
         this.login = login;
         this.senha = senha;
     }
@@ -29,4 +30,11 @@ public class Usuario {
         return senha;
     }
 
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }    
 }

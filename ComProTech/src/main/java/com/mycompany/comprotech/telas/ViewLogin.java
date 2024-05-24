@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.comprotech;
+package com.mycompany.comprotech.telas;
+import com.mycompany.comprotech.modelo.Usuario;
+import com.mycompany.comprotech.db.UsuarioDAO;
 import javax.swing.JOptionPane;
 
 /**
@@ -159,12 +161,27 @@ public class ViewLogin extends javax.swing.JFrame {
             String senha = new String(TxtSenha.getPassword());
             var usuario = new Usuario(login, senha);
             var dao = new UsuarioDAO();
-            if(dao.existe(usuario)){
+            if(dao.existe(usuario) != null){
                 JOptionPane.showMessageDialog(null, "Bem vindo");
+                if(usuario.getTipo() == 1){
+                   //admin
+                   //construir uma AdminTela
+                   //var adminTela = new AdminTela(); <-- Criar a tela de admin
+                   JOptionPane.showMessageDialog(null, "Bem vindo Admin");
+                   //tornar a tela visível
+                   //descartar a tela atual(dispose)
+//                   dispose();
+                }
+                else{
+                    //comum
+                    //var comumTela = new ComumTela(); <-- Criar a tela de usuario comum 
+                    JOptionPane.showMessageDialog(null, "Bem vindo usuario");
+//                    dispose();
+                }
             }
             else{
                 JOptionPane.showMessageDialog(null, "Par usuário/senha inválido");
-            }
+            }                
         }
         catch(Exception e){
             e.printStackTrace();
