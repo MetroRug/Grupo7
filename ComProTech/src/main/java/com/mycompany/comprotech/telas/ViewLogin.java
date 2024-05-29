@@ -43,7 +43,7 @@ public class ViewLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(20, 37, 47));
         jPanel1.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 jPanel1ComponentShown(evt);
@@ -51,20 +51,20 @@ public class ViewLogin extends javax.swing.JFrame {
         });
 
         LblLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        LblLogin.setForeground(new java.awt.Color(66, 141, 255));
+        LblLogin.setForeground(new java.awt.Color(255, 255, 255));
         LblLogin.setText("Login");
 
-        TxtLogin.setForeground(new java.awt.Color(66, 141, 255));
+        TxtLogin.setForeground(new java.awt.Color(20, 37, 47));
 
         LblSenha.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        LblSenha.setForeground(new java.awt.Color(66, 141, 255));
+        LblSenha.setForeground(new java.awt.Color(255, 255, 255));
         LblSenha.setText("Senha");
 
-        TxtSenha.setForeground(new java.awt.Color(66, 141, 255));
+        TxtSenha.setForeground(new java.awt.Color(20, 37, 47));
 
-        BtnEntrar.setBackground(new java.awt.Color(164, 194, 247));
+        BtnEntrar.setBackground(new java.awt.Color(66, 131, 29));
         BtnEntrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        BtnEntrar.setForeground(new java.awt.Color(66, 141, 255));
+        BtnEntrar.setForeground(new java.awt.Color(255, 255, 255));
         BtnEntrar.setText("Entrar");
         BtnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,9 +72,9 @@ public class ViewLogin extends javax.swing.JFrame {
             }
         });
 
-        BtnCancelar.setBackground(new java.awt.Color(164, 194, 247));
+        BtnCancelar.setBackground(new java.awt.Color(255, 51, 51));
         BtnCancelar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        BtnCancelar.setForeground(new java.awt.Color(66, 141, 255));
+        BtnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         BtnCancelar.setText("Cancelar");
         BtnCancelar.setPreferredSize(new java.awt.Dimension(90, 27));
         BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -83,9 +83,9 @@ public class ViewLogin extends javax.swing.JFrame {
             }
         });
 
-        BtnCriaConta.setBackground(new java.awt.Color(164, 194, 247));
+        BtnCriaConta.setBackground(new java.awt.Color(66, 131, 29));
         BtnCriaConta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        BtnCriaConta.setForeground(new java.awt.Color(66, 141, 255));
+        BtnCriaConta.setForeground(new java.awt.Color(255, 255, 255));
         BtnCriaConta.setText("Criar conta");
         BtnCriaConta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +93,7 @@ public class ViewLogin extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/padlock.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LogoS128x157.png"))); // NOI18N
         jLabel7.setToolTipText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -103,7 +103,7 @@ public class ViewLogin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
+                        .addGap(105, 105, 105)
                         .addComponent(jLabel7))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
@@ -112,33 +112,34 @@ public class ViewLogin extends javax.swing.JFrame {
                             .addComponent(LblLogin)
                             .addComponent(TxtLogin)
                             .addComponent(TxtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
-                            .addComponent(BtnCriaConta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(BtnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BtnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(BtnCriaConta))
+                            .addComponent(BtnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(15, 15, 15)
                 .addComponent(jLabel7)
-                .addGap(24, 24, 24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LblLogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TxtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(LblSenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TxtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BtnCriaConta, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(TxtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BtnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtnCriaConta, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -167,16 +168,26 @@ public class ViewLogin extends javax.swing.JFrame {
                    //admin
                    //construir uma AdminTela
                    //var adminTela = new AdminTela(); <-- Criar a tela de admin
-                   JOptionPane.showMessageDialog(null, "Bem vindo Admin");
-                   //tornar a tela visível
-                   //descartar a tela atual(dispose)
-//                   dispose();
+                   // Instanciando a tela ViewPrincipal
+                    ViewPrincipal viewPrincipal = new ViewPrincipal();
+
+                    // Exibindo a tela ViewPrincipal
+                    viewPrincipal.setVisible(true);
+
+                    // Ocultando a tela ViewLogin
+                    this.setVisible(false);   
                 }
                 else{
                     //comum
                     //var comumTela = new ComumTela(); <-- Criar a tela de usuario comum 
-                    JOptionPane.showMessageDialog(null, "Bem vindo usuario");
-//                    dispose();
+                    // Instanciando a tela ViewPrincipal
+                    ViewPrincipal viewPrincipal = new ViewPrincipal();
+
+                    // Exibindo a tela ViewPrincipal
+                    viewPrincipal.setVisible(true);
+
+                    // Ocultando a tela ViewLogin
+                    this.setVisible(false);   
                 }
             }
             else{

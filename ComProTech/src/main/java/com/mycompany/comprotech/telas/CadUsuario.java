@@ -67,9 +67,9 @@ public class CadUsuario extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(20, 37, 47));
 
-        CbSexo.setForeground(new java.awt.Color(66, 141, 255));
+        CbSexo.setForeground(new java.awt.Color(20, 37, 47));
         CbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MASCULINO", "FEMININO" }));
         CbSexo.setSelectedIndex(-1);
         CbSexo.addItemListener(new java.awt.event.ItemListener() {
@@ -79,34 +79,34 @@ public class CadUsuario extends javax.swing.JFrame {
         });
 
         LblLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        LblLogin.setForeground(new java.awt.Color(66, 141, 255));
+        LblLogin.setForeground(new java.awt.Color(255, 255, 255));
         LblLogin.setText("Nome de usúario");
 
-        TxtNovoLogin.setForeground(new java.awt.Color(66, 141, 255));
+        TxtNovoLogin.setForeground(new java.awt.Color(20, 37, 47));
 
         LblLogin1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        LblLogin1.setForeground(new java.awt.Color(66, 141, 255));
+        LblLogin1.setForeground(new java.awt.Color(255, 255, 255));
         LblLogin1.setText("E-mail");
 
-        TxtNomeUsu.setForeground(new java.awt.Color(66, 141, 255));
+        TxtNomeUsu.setForeground(new java.awt.Color(20, 37, 47));
 
         LblLogin2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        LblLogin2.setForeground(new java.awt.Color(66, 141, 255));
+        LblLogin2.setForeground(new java.awt.Color(255, 255, 255));
         LblLogin2.setText("Nome completo");
 
-        TxtEmail.setForeground(new java.awt.Color(66, 141, 255));
+        TxtEmail.setForeground(new java.awt.Color(20, 37, 47));
 
         LblLogin3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        LblLogin3.setForeground(new java.awt.Color(66, 141, 255));
+        LblLogin3.setForeground(new java.awt.Color(255, 255, 255));
         LblLogin3.setText("CPF/CNPJ");
 
-        TxtCpf.setForeground(new java.awt.Color(66, 141, 255));
+        TxtCpf.setForeground(new java.awt.Color(20, 37, 47));
 
         LblLogin4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        LblLogin4.setForeground(new java.awt.Color(66, 141, 255));
+        LblLogin4.setForeground(new java.awt.Color(255, 255, 255));
         LblLogin4.setText("Sexo");
 
-        CbTipo.setForeground(new java.awt.Color(66, 141, 255));
+        CbTipo.setForeground(new java.awt.Color(20, 37, 47));
         CbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "USUARIO", "ADMIN" }));
         CbTipo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -115,20 +115,20 @@ public class CadUsuario extends javax.swing.JFrame {
         });
 
         LblLogin5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        LblLogin5.setForeground(new java.awt.Color(66, 141, 255));
+        LblLogin5.setForeground(new java.awt.Color(255, 255, 255));
         LblLogin5.setText("Tipo");
 
         LblLogin6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        LblLogin6.setForeground(new java.awt.Color(66, 141, 255));
+        LblLogin6.setForeground(new java.awt.Color(255, 255, 255));
         LblLogin6.setText("Senha");
 
         LblLogin7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        LblLogin7.setForeground(new java.awt.Color(66, 141, 255));
+        LblLogin7.setForeground(new java.awt.Color(255, 255, 255));
         LblLogin7.setText("Confirmar senha");
 
-        BtnCriaConta.setBackground(new java.awt.Color(164, 194, 247));
+        BtnCriaConta.setBackground(new java.awt.Color(66, 131, 29));
         BtnCriaConta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        BtnCriaConta.setForeground(new java.awt.Color(66, 141, 255));
+        BtnCriaConta.setForeground(new java.awt.Color(255, 255, 255));
         BtnCriaConta.setText("Criar Conta");
         BtnCriaConta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,9 +136,9 @@ public class CadUsuario extends javax.swing.JFrame {
             }
         });
 
-        BtnCancelar.setBackground(new java.awt.Color(164, 194, 247));
+        BtnCancelar.setBackground(new java.awt.Color(255, 51, 51));
         BtnCancelar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        BtnCancelar.setForeground(new java.awt.Color(66, 141, 255));
+        BtnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         BtnCancelar.setText("Cancelar");
         BtnCancelar.setPreferredSize(new java.awt.Dimension(90, 27));
         BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -147,14 +147,14 @@ public class CadUsuario extends javax.swing.JFrame {
             }
         });
 
-        TxtNovaSenha.setForeground(new java.awt.Color(66, 141, 255));
+        TxtNovaSenha.setForeground(new java.awt.Color(20, 37, 47));
 
-        TxtConfSenha.setForeground(new java.awt.Color(66, 141, 255));
+        TxtConfSenha.setForeground(new java.awt.Color(20, 37, 47));
 
-        TxtIdade.setForeground(new java.awt.Color(66, 141, 255));
+        TxtIdade.setForeground(new java.awt.Color(20, 37, 47));
 
         LblLogin8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        LblLogin8.setForeground(new java.awt.Color(66, 141, 255));
+        LblLogin8.setForeground(new java.awt.Color(255, 255, 255));
         LblLogin8.setText("Idade");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
