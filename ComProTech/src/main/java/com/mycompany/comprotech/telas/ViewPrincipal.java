@@ -14,7 +14,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
      * Creates new form ViewPrincipal
      */
     public ViewPrincipal() {
-        initComponents();
+        initComponents();      
         this.setExtendedState(MAXIMIZED_BOTH);
     }
 
@@ -172,6 +172,8 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
     private void BtnFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnFuncionariosActionPerformed
         // TODO add your handling code here:
+        ViewFuncionarios viewFuncionarios = new ViewFuncionarios();
+        viewFuncionarios.setVisible(true);        
     }//GEN-LAST:event_BtnFuncionariosActionPerformed
 
     private void BtnInsumosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInsumosActionPerformed

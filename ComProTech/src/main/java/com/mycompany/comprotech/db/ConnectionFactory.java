@@ -6,6 +6,7 @@ package com.mycompany.comprotech.db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+
 /**
  *
  * @author lucas

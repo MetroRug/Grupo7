@@ -5,6 +5,10 @@
 package com.mycompany.comprotech.db;
 
 import com.mycompany.comprotech.modelo.Usuario;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 /**
@@ -62,5 +66,6 @@ public class UsuarioDAO {
         ps.execute();
         //6. Fechar a conexão
         conexao.close();
-    }      
+    }
+
 }

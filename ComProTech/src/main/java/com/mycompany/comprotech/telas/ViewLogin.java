@@ -163,7 +163,7 @@ public class ViewLogin extends javax.swing.JFrame {
             var usuario = new Usuario(login, senha);
             var dao = new UsuarioDAO();
             if(dao.existe(usuario) != null){
-                JOptionPane.showMessageDialog(null, "Bem vindo");
+//                JOptionPane.showMessageDialog(null, "Bem vindo");
                 if(usuario.getTipo() == 1){
                    //admin
                    //construir uma AdminTela
