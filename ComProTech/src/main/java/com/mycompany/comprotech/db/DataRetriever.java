@@ -33,5 +33,21 @@ public class DataRetriever {
 
         return rs;
     }
+    public ResultSet getDataPacientes() {
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null; 
+
+        try {
+            conn = new ConnectionFactory().conectar();
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT codigo, nome, Endereco, cpf FROM pacientes"); 
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return rs;
+    }    
 }    
 

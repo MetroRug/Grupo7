@@ -5,35 +5,33 @@
 package com.mycompany.comprotech.telas;
 
 import com.mycompany.comprotech.db.DataRetriever;
-import javax.swing.table.DefaultTableModel;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-//import com.mycompany.comprotech.db.UsuarioDAO.DataRetriever;
-//import java.sql.ResultSet;
-//import java.sql.ResultSetMetaData;
-//import java.sql.SQLException;
-//import javax.swing.table.DefaultTableModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author lucas
  */
-public class ViewFuncionarios extends javax.swing.JFrame {
+public class ViewPacientes extends javax.swing.JFrame {
 
     /**
-     * Creates new form ViewFuncionarios
+     * Creates new form ViewPacientes
      */
-    public ViewFuncionarios() {
+    public ViewPacientes() {
+        setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);
         carregarDadosTabela();
-        
+               
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setVisible(true);        
     }
     
     private void carregarDadosTabela() {
         DataRetriever retriever = new DataRetriever();
-        ResultSet rs = retriever.getData();
+        ResultSet rs = retriever.getDataPacientes();
 
         try {
             ResultSetMetaData metaData = rs.getMetaData();
@@ -58,8 +56,8 @@ public class ViewFuncionarios extends javax.swing.JFrame {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-    
+    }    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -73,10 +71,11 @@ public class ViewFuncionarios extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         BtnSair = new javax.swing.JButton();
+        BtnPacientes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(20, 37, 47));
+        jPanel1.setBackground(new java.awt.Color(32, 51, 66));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -86,7 +85,7 @@ public class ViewFuncionarios extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "CÓDIGO", "LOGIN", "NOME DO USUARIO", "CPF/CNPJ"
+                "CÓDIGO", "NOME", "ENDEREÇO", "CPF/CNPJ"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -98,12 +97,6 @@ public class ViewFuncionarios extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-        }
 
         BtnSair.setBackground(new java.awt.Color(255, 51, 51));
         BtnSair.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -118,15 +111,32 @@ public class ViewFuncionarios extends javax.swing.JFrame {
             }
         });
 
+        BtnPacientes.setBackground(new java.awt.Color(66, 131, 29));
+        BtnPacientes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BtnPacientes.setForeground(new java.awt.Color(255, 255, 255));
+        BtnPacientes.setText("Cadastrar Pacientes");
+        BtnPacientes.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        BtnPacientes.setBorderPainted(false);
+        BtnPacientes.setPreferredSize(new java.awt.Dimension(90, 27));
+        BtnPacientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPacientesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 871, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(BtnPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 893, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +144,9 @@ public class ViewFuncionarios extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -148,9 +160,7 @@ public class ViewFuncionarios extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -160,6 +170,13 @@ public class ViewFuncionarios extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_BtnSairActionPerformed
+
+    private void BtnPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPacientesActionPerformed
+        // TODO add your handling code here:
+        CadPacientes cadPacientes = new CadPacientes();
+        cadPacientes.setVisible(true);   
+        
+    }//GEN-LAST:event_BtnPacientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,25 +195,26 @@ public class ViewFuncionarios extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewPacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewPacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewPacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewPacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewFuncionarios().setVisible(true);
+                new ViewPacientes().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnPacientes;
     private javax.swing.JButton BtnSair;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

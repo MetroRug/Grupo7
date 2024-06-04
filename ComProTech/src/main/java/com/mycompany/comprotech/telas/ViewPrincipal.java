@@ -182,6 +182,8 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
     private void BtnPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPacientesActionPerformed
         // TODO add your handling code here:
+        ViewPacientes viewPacientes = new ViewPacientes();
+        viewPacientes.setVisible(true);   
     }//GEN-LAST:event_BtnPacientesActionPerformed
 
     private void BtnConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConsultasActionPerformed
