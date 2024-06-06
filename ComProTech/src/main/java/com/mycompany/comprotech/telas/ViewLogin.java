@@ -163,17 +163,18 @@ public class ViewLogin extends javax.swing.JFrame {
             var usuario = new Usuario(login, senha);
             var dao = new UsuarioDAO();
             if(dao.existe(usuario) != null){
-//                JOptionPane.showMessageDialog(null, "Bem vindo");
+//                JOptionPane.showMessageDialog(null, "Bem vindo");                
                 if(usuario.getTipo() == 1){
                    //admin
                    //construir uma AdminTela
-                   //var adminTela = new AdminTela(); <-- Criar a tela de admin
+                   //var adminTela = new AdminTela(); <-- Criar a tela de admin                                                        
                    // Instanciando a tela ViewPrincipal
                     ViewPrincipal viewPrincipal = new ViewPrincipal();
-
+                    viewPrincipal.ValidaUsu = usuario.getTipo();                    
                     // Exibindo a tela ViewPrincipal
-                    viewPrincipal.setVisible(true);
-
+                    viewPrincipal.setVisible(true);           
+                    
+                    
                     // Ocultando a tela ViewLogin
                     this.setVisible(false);   
                 }
@@ -182,7 +183,7 @@ public class ViewLogin extends javax.swing.JFrame {
                     //var comumTela = new ComumTela(); <-- Criar a tela de usuario comum 
                     // Instanciando a tela ViewPrincipal
                     ViewPrincipal viewPrincipal = new ViewPrincipal();
-
+                    viewPrincipal.ValidaUsu = usuario.getTipo();
                     // Exibindo a tela ViewPrincipal
                     viewPrincipal.setVisible(true);
 

@@ -4,17 +4,21 @@
  */
 package com.mycompany.comprotech.telas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author lucas
  */
 public class ViewPrincipal extends javax.swing.JFrame {
 
+    int ValidaUsu;
+
     /**
      * Creates new form ViewPrincipal
      */
-    public ViewPrincipal() {
-        initComponents();      
+    public ViewPrincipal() {        
+        initComponents();        
         this.setExtendedState(MAXIMIZED_BOTH);
     }
 
@@ -30,7 +34,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         BtnFuncionarios = new javax.swing.JButton();
-        BtnInsumos = new javax.swing.JButton();
         BtnPacientes = new javax.swing.JButton();
         BtnConsultas = new javax.swing.JButton();
         BtnSair = new javax.swing.JButton();
@@ -53,19 +56,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
         BtnFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnFuncionariosActionPerformed(evt);
-            }
-        });
-
-        BtnInsumos.setBackground(new java.awt.Color(66, 131, 29));
-        BtnInsumos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        BtnInsumos.setForeground(new java.awt.Color(255, 255, 255));
-        BtnInsumos.setText("Insumos");
-        BtnInsumos.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        BtnInsumos.setBorderPainted(false);
-        BtnInsumos.setPreferredSize(new java.awt.Dimension(90, 27));
-        BtnInsumos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnInsumosActionPerformed(evt);
             }
         });
 
@@ -116,7 +106,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BtnFuncionarios, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                    .addComponent(BtnInsumos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
                     .addComponent(BtnConsultas, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
                     .addComponent(BtnPacientes, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
                     .addComponent(BtnSair, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
@@ -129,8 +118,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
                 .addComponent(BtnFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BtnPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BtnInsumos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BtnConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -172,13 +159,10 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
     private void BtnFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnFuncionariosActionPerformed
         // TODO add your handling code here:
-        ViewFuncionarios viewFuncionarios = new ViewFuncionarios();
+        ViewFuncionarios viewFuncionarios = new ViewFuncionarios();        
         viewFuncionarios.setVisible(true);        
+        
     }//GEN-LAST:event_BtnFuncionariosActionPerformed
-
-    private void BtnInsumosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInsumosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnInsumosActionPerformed
 
     private void BtnPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPacientesActionPerformed
         // TODO add your handling code here:
@@ -188,6 +172,8 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
     private void BtnConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnConsultasActionPerformed
         // TODO add your handling code here:
+        ViewConsultas viewConsultas = new ViewConsultas();                
+        viewConsultas.setVisible(true);                 
     }//GEN-LAST:event_BtnConsultasActionPerformed
 
     private void BtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSairActionPerformed
@@ -233,7 +219,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnConsultas;
     private javax.swing.JButton BtnFuncionarios;
-    private javax.swing.JButton BtnInsumos;
     private javax.swing.JButton BtnPacientes;
     private javax.swing.JButton BtnSair;
     private javax.swing.JLabel jLabel1;

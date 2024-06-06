@@ -3,9 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.comprotech.telas;
-
-import com.mycompany.comprotech.db.CadastroPaciente;
-import com.mycompany.comprotech.db.PacienteDAO;
+import com.mycompany.comprotech.db.CadastroConsultas;
+import com.mycompany.comprotech.db.ConsultasDAO;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.LocalTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -14,18 +17,16 @@ import javax.swing.JOptionPane;
  *
  * @author lucas
  */
-public class CadPacientes extends javax.swing.JFrame {
+public class CadConsultas extends javax.swing.JFrame {
 
+    
     /**
-     * Creates new form CadPacientes
+     * Creates new form CadConsultas
      */
-    public CadPacientes() {
-//        setUndecorated(true);
+    public CadConsultas() {
         initComponents();
         setLocationRelativeTo(null);
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);        
-//        setDefaultCloseOperation(EXIT_ON_CLOSE);
-//        setVisible(true); 
     }
 
     /**
@@ -40,20 +41,16 @@ public class CadPacientes extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         TxtNome = new javax.swing.JTextField();
-        TxtEmail = new javax.swing.JTextField();
-        TxtEndereco = new javax.swing.JTextField();
-        TxtCpf = new javax.swing.JTextField();
-        TxtTelefone = new javax.swing.JTextField();
-        CbSexo = new javax.swing.JComboBox<>();
+        TxtMedico = new javax.swing.JTextField();
+        TxtData = new javax.swing.JTextField();
+        TxtHrInicio = new javax.swing.JTextField();
+        TxtHrFim = new javax.swing.JTextField();
         BtnSair = new javax.swing.JButton();
         BtnSalvar = new javax.swing.JButton();
-        TxtIdade = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,33 +58,23 @@ public class CadPacientes extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Nome");
+        jLabel1.setText("Nome do paciente");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("E-mail");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Idade");
+        jLabel2.setText("Médico responsavel");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("CPF/CNPJ");
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Sexo");
+        jLabel4.setText("Hora de inicio");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Endereço");
+        jLabel6.setText("Data da consulta");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Telefone ");
-
-        CbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
+        jLabel7.setText("Hora do termino");
 
         BtnSair.setBackground(new java.awt.Color(255, 51, 51));
         BtnSair.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -115,8 +102,6 @@ public class CadPacientes extends javax.swing.JFrame {
             }
         });
 
-        TxtIdade.setText("00");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -129,68 +114,54 @@ public class CadPacientes extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jLabel6))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(TxtTelefone)
-                    .addComponent(TxtEndereco)
+                    .addComponent(TxtData)
                     .addComponent(TxtNome, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BtnSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(BtnSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(88, 88, 88)
                         .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(TxtEmail, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TxtCpf, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(TxtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))))
-                .addGap(21, 21, 21))
+                    .addComponent(TxtMedico, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(TxtHrInicio, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(TxtHrFim))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(86, 86, 86)
+                .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TxtMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(jLabel6))
                         .addGap(17, 17, 17)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(TxtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(TxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(TxtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtHrInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(39, 39, 39)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(TxtHrFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -205,7 +176,7 @@ public class CadPacientes extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -218,44 +189,55 @@ public class CadPacientes extends javax.swing.JFrame {
 
     private void BtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalvarActionPerformed
         // TODO add your handling code here:
+        String paciente = TxtNome.getText();
+        String medico = TxtMedico.getText();
+        String DtConsulta = TxtData.getText();
+        String HoraIni = TxtHrInicio.getText();
+        String HoraFim = TxtHrFim.getText();
         
-        String sexo = "";
-              
-        String nome = TxtNome.getText();
-        String email = TxtEmail.getText();
-        String cpf = TxtCpf.getText();
-        String endereco = TxtEndereco.getText();
-        String telefone = TxtTelefone.getText();
-        Object selectedSexo = CbSexo.getSelectedItem();
-                
-        if (selectedSexo != null) {
-            if (selectedSexo.equals("MASCULINO")) {
-                sexo = "Ma";
-            } else if (selectedSexo.equals("FEMININO")) {
-                sexo = "Fe";
-            }
-        }        
-        
+
         // Validação de campos vazios
-        if (nome.trim().isEmpty() || cpf.trim().isEmpty() || email.trim().isEmpty() || TxtIdade.getText().trim().isEmpty()){        
+        if (paciente.trim().isEmpty() || medico.trim().isEmpty() || HoraIni.trim().isEmpty() || HoraFim.trim().isEmpty() || DtConsulta.trim().isEmpty()){
             JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos!");
             return;
-        }      
-        
-        int idade = 0; // Inicializa a idade com 0
+        }
+
+        // Validação de data
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate dataConsulta = null;
         try {
-            idade = Integer.parseInt(TxtIdade.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Idade inválida!");
+            dataConsulta = LocalDate.parse(DtConsulta, dateFormatter);
+        } catch (DateTimeParseException e) {
+            JOptionPane.showMessageDialog(null, "Data inválida! Use o formato dd/MM/yyyy.");
             return;
-        }           
+        }        
         
-        var paciente = new CadastroPaciente(nome, sexo, cpf, endereco, email, telefone, idade);
-        var dao = new PacienteDAO();
+        // Validação de hora
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+        LocalTime horaInicio = null;
+        LocalTime horaFim = null;
+        try {
+            horaInicio = LocalTime.parse(HoraIni, timeFormatter);
+            horaFim = LocalTime.parse(HoraFim, timeFormatter);
+        } catch (DateTimeParseException e) {
+            JOptionPane.showMessageDialog(null, "Hora inválida! Use o formato HH:mm.");
+            return;
+        }        
+        
+        // Conversão da data para o formato adequado para o banco de dados (por exemplo, yyyy-MM-dd)
+        DateTimeFormatter dbDateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDtConsulta = dataConsulta.format(dbDateFormatter);        
+        
+        // Conversão da hora para o formato adequado para o banco de dados (HH:mm)
+        String formattedHoraIni = horaInicio.format(timeFormatter);
+        String formattedHoraFim = horaFim.format(timeFormatter);        
+        
+        var consulta = new CadastroConsultas(paciente, medico, formattedDtConsulta, formattedHoraIni, formattedHoraFim);
+        var dao = new ConsultasDAO();
         //string pool
 
         try {
-            dao.cadastrar(paciente);
+            dao.cadastrar(consulta);
             JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
             limparCampos();
 
@@ -263,16 +245,15 @@ public class CadPacientes extends javax.swing.JFrame {
             Logger.getLogger(CadUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        
     }//GEN-LAST:event_BtnSalvarActionPerformed
 
 private void limparCampos() {
     TxtNome.setText("");
-    CbSexo.setSelectedIndex(0);         
-    TxtCpf.setText("");
-    TxtEmail.setText("");
-    TxtIdade.setText("");
-}        
+    TxtMedico.setText("");
+    TxtHrInicio.setText("");
+    TxtHrFim.setText("");
+    TxtData.setText("");
+}       
     /**
      * @param args the command line arguments
      */
@@ -290,20 +271,20 @@ private void limparCampos() {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadPacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadConsultas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadPacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadConsultas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadPacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadConsultas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadPacientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadConsultas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadPacientes().setVisible(true);
+                new CadConsultas().setVisible(true);
             }
         });
     }
@@ -311,18 +292,14 @@ private void limparCampos() {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnSair;
     private javax.swing.JButton BtnSalvar;
-    private javax.swing.JComboBox<String> CbSexo;
-    private javax.swing.JTextField TxtCpf;
-    private javax.swing.JTextField TxtEmail;
-    private javax.swing.JTextField TxtEndereco;
-    private javax.swing.JTextField TxtIdade;
+    private javax.swing.JTextField TxtData;
+    private javax.swing.JTextField TxtHrFim;
+    private javax.swing.JTextField TxtHrInicio;
+    private javax.swing.JTextField TxtMedico;
     private javax.swing.JTextField TxtNome;
-    private javax.swing.JTextField TxtTelefone;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;

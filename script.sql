@@ -24,12 +24,13 @@ CREATE TABLE PACIENTES(
     Email VARCHAR(255)
 )
 
-
-Create TABLE Insumos(
+Create TABLE Consultas(
     Codigo SERIAL PRIMARY KEY,
-    Descricao VARCHAR(255),
-    DataCri DATE,
-    CodBarras VARCHAR(255)
+    Paciente VARCHAR(255),    
+    Medico VARCHAR(255),
+    HoraIni VARCHAR(50),
+    HoraFim VARCHAR(50),
+    DtConsulta VARCHAR(50)
 )
 
 

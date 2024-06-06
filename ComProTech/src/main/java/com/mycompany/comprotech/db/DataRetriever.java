@@ -49,5 +49,21 @@ public class DataRetriever {
 
         return rs;
     }    
+    public ResultSet getDataConsultas() {
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null; 
+
+        try {
+            conn = new ConnectionFactory().conectar();
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT Codigo, paciente, Medico, HoraIni, HoraFim FROM CONSULTAS"); 
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return rs;
+    }        
 }    
 

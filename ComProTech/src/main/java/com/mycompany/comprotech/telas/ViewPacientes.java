@@ -5,6 +5,7 @@
 package com.mycompany.comprotech.telas;
 
 import com.mycompany.comprotech.db.DataRetriever;
+import com.mycompany.comprotech.telas.ViewPrincipal;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -16,17 +17,18 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ViewPacientes extends javax.swing.JFrame {
 
+
     /**
      * Creates new form ViewPacientes
      */
     public ViewPacientes() {
-        setUndecorated(true);
-        initComponents();
+        initComponents();                              
         setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         carregarDadosTabela();
-               
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);        
+        
+        
+
     }
     
     private void carregarDadosTabela() {
@@ -71,7 +73,7 @@ public class ViewPacientes extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         BtnSair = new javax.swing.JButton();
-        BtnPacientes = new javax.swing.JButton();
+        BtnCadPacientes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,6 +98,7 @@ public class ViewPacientes extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setEnabled(false);
         jScrollPane1.setViewportView(jTable1);
 
         BtnSair.setBackground(new java.awt.Color(255, 51, 51));
@@ -111,16 +114,16 @@ public class ViewPacientes extends javax.swing.JFrame {
             }
         });
 
-        BtnPacientes.setBackground(new java.awt.Color(66, 131, 29));
-        BtnPacientes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        BtnPacientes.setForeground(new java.awt.Color(255, 255, 255));
-        BtnPacientes.setText("Cadastrar Pacientes");
-        BtnPacientes.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        BtnPacientes.setBorderPainted(false);
-        BtnPacientes.setPreferredSize(new java.awt.Dimension(90, 27));
-        BtnPacientes.addActionListener(new java.awt.event.ActionListener() {
+        BtnCadPacientes.setBackground(new java.awt.Color(66, 131, 29));
+        BtnCadPacientes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BtnCadPacientes.setForeground(new java.awt.Color(255, 255, 255));
+        BtnCadPacientes.setText("Cadastrar Pacientes");
+        BtnCadPacientes.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        BtnCadPacientes.setBorderPainted(false);
+        BtnCadPacientes.setPreferredSize(new java.awt.Dimension(90, 27));
+        BtnCadPacientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnPacientesActionPerformed(evt);
+                BtnCadPacientesActionPerformed(evt);
             }
         });
 
@@ -132,7 +135,7 @@ public class ViewPacientes extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(BtnPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BtnCadPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 893, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -146,7 +149,7 @@ public class ViewPacientes extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtnCadPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -171,12 +174,12 @@ public class ViewPacientes extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_BtnSairActionPerformed
 
-    private void BtnPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPacientesActionPerformed
+    private void BtnCadPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCadPacientesActionPerformed
         // TODO add your handling code here:
         CadPacientes cadPacientes = new CadPacientes();
         cadPacientes.setVisible(true);   
         
-    }//GEN-LAST:event_BtnPacientesActionPerformed
+    }//GEN-LAST:event_BtnCadPacientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,7 +217,7 @@ public class ViewPacientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnPacientes;
+    private javax.swing.JButton BtnCadPacientes;
     private javax.swing.JButton BtnSair;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
